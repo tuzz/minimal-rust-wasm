@@ -1,0 +1,20 @@
+#!/bin/bash
+
+origin=$(git config --get remote.origin.url)
+
+
+./bin/wasm_release                   && \
+rm -rf tmp                           && \
+mkdir -p tmp/target                  && \
+cd tmp                               && \
+cp ../index.html .                   && \
+cp ../target/index.wasm target       && \
+cp ../target/index.js target         && \
+touch .nojekyll                      && \
+git init                             && \
+git add -A                           && \
+git commit -m 'Deploy changes'       && \
+git remote add origin $origin        && \
+git push -f origin master:gh-pages   && \
+cd ..                                && \
+rm -rf tmp

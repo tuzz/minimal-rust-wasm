@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wasm-pack build --dev --target no-modules --out-dir target --out-name index && \
+mv target/index_bg.wasm target/index.wasm

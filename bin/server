@@ -1,0 +1,3 @@
+#!/bin/bash
+
+live-server --watch=target/index.wasm

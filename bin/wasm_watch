@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cargo watch -s 'clear && ./bin/wasm_dev' --delay 0

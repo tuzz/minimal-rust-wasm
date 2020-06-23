@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rustup target add wasm32-unknown-unknown
+which wasm-pack || cargo install wasm-pack
+which cargo-watch || cargo install cargo-watch
+brew list binaryen || brew install binaryen
+which live-server || yarn global add live-server
